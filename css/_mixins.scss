@@ -1,0 +1,102 @@
+@mixin logo {
+  width: 35px;
+  height: 35px;
+  margin: 40px 0;
+  background-image: url("../images/logo.png");
+  background-size: contain;
+  background-color: transparent;
+}
+
+@mixin title {
+  color: var(--color-text);
+  display: none;
+
+  @media screen and (min-width: 600px) {
+    display: block;
+    margin-inline-start: 10px;
+  }
+}
+
+@mixin dynamic-menu {
+  @media screen and (max-width: 1024px) {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 200;
+
+    padding: 10px;
+
+    background-color: var(--color-secondary);
+    border-radius: 10px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin-inline-end: 50px;
+    display: flex !important;
+    gap: 50px;
+  }
+}
+
+@mixin card {
+  display: flex;
+  flex-direction: column;
+
+  //background-color: var(--color-primary);
+  border-radius: var(--border-radius);
+
+  @media screen and (min-width: 600px) and (max-width: 1024px) {
+    &:first-child {
+      flex-basis: 100%;
+    }
+
+    flex: 1 0 0;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    flex: 1 0 0;
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+
+    :first-child {
+      width: 100%;
+      text-align: end;
+      margin-inline-end: 20px;
+    }
+  }
+
+  p {
+    padding: 20px 30px;
+
+    text-align: justify;
+  }
+}
+
+@mixin fab {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+
+  background-color: var(--color-primary);
+  border-radius: var(--border-radius);
+  border: none;
+  padding: 20px;
+
+  font-size: 1rem;
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--color-accent);
+  }
+
+  &:focus-within {
+    border: 1px solid var(--color-accent);
+  }
+}

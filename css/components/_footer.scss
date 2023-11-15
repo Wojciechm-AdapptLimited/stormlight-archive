@@ -1,0 +1,23 @@
+#site-footer {
+  width: 100%;
+  padding: 20px 0;
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--color-background);
+
+  p {
+    margin: 0;
+  }
+
+  :first-child {
+    margin-top: 10px;
+  }
+
+  :last-child {
+    margin-bottom: 10px;
+  }
+}

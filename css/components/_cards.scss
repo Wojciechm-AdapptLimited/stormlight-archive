@@ -1,0 +1,19 @@
+@import "../mixins";
+
+#card-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: wrap;
+  flex-grow: 0;
+  padding: 0 20px;
+
+  @media screen and (min-width: 1024px) {
+    flex-flow: row nowrap;
+  }
+
+  .card {
+    @include card;
+  }
+}

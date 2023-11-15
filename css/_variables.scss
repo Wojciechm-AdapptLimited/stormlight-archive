@@ -1,0 +1,25 @@
+:root {
+  --border-radius: 0.5rem;
+  //--color-text: #130e01;
+  //--color-background: #fffaeb;
+  //--color-primary: #ff8400;
+  //--color-secondary: #fff5d6;
+  //--color-accent: #cf4307;
+  --color-text: #121621;
+  --color-background: #e8eaf3;
+  --color-primary: #96a7da;
+  --color-secondary: #cad0e3;
+  --color-accent: #4d5f93;
+}
+
+$bg-colors: "primary", "secondary", "accent", "background";
+
+@each $color in $bg-colors {
+  .bg-#{$color} {
+    background-color: var(--color-#{$color});
+  }
+}
+
+.white-text {
+    color: #fff;
+}

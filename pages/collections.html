@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stormlight Archive - Characters</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <header id="site-header">
+        <a title="Visit the main page" id="site-title-logo" href="../index.html">
+            <i id="site-logo"></i>
+            <h5 id="site-title">Stormlight Archive</h5>
+        </a>
+        <div id="site-nav-container">
+            <nav id="site-nav">
+                <a title="Visit the characters page" href="characters.html">Characters</a>
+                <a title="Visit the places page" href="/places">Places</a>
+                <a title="Visit the history page" href="/history">History</a>
+                <a title="Visit the collections page" href="#">Collections</a>
+                <a title="Visit the about page" href="/about">About</a>
+            </nav>
+            <button type="button" class="icon" onclick="showMenu()">
+                <span class="material-symbols-outlined">
+                    menu
+                </span>
+            </button>
+        </div>
+    </header>
+    <section class="container" id="table-container">
+        <h4 id="table-title">Stormlight Archive Book Collection</h4>
+        <table id="collections-table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Version</th>
+                    <th>Finished</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <button id="table-fab" type="button" onclick="addRow()">
+            <span class="material-symbols-outlined">
+                add
+            </span>
+            <span>Add</span>
+        </button>
+    </section>
+    <footer id="site-footer">
+        <p>Designed by</p>
+        <p>Wojciech Mączka</p>
+    </footer>
+
+    <script src="../scripts/utils.js"></script>
+    <script src="../scripts/table.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+@import "../mixins";
+
+#table-container {
+  position: relative;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  #table-title {
+    text-align: center;
+  }
+
+  table {
+    table-layout: fixed;
+    width: 80%;
+    margin-inline: 50px;
+
+    border: 1px solid var(--color-secondary);
+    border-spacing: 0;
+    border-radius: var(--border-radius);
+
+    th, td {
+      padding: 20px;
+    }
+
+    tbody tr {
+      td {
+        border-bottom: 1px solid var(--color-secondary);
+
+        &:nth-child(3), &:nth-child(4) {
+          text-align: center;
+        }
+      }
+
+      &:hover {
+        background-color: var(--color-secondary);
+      }
+
+      &:first-child td {
+        border-top: 1px solid var(--color-secondary);
+      }
+
+      &:last-child td {
+        border-bottom: none;
+      }
+    }
+  }
+
+  #table-fab {
+    position: fixed;
+    bottom: 100px;
+    right: 50px;
+    z-index: 100;
+
+    @include fab;
+  }
+}
