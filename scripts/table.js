@@ -1,6 +1,20 @@
 const books = ["The Way of Kings", "Words of Radiance", "Oathbringer", "Rhythm of War"];
 const versions = ["Hardcover", "Paperback", "Ebook", "Audiobook"];
 
+const vanillaTable = document.getElementById("collections-table-vanilla-js");
+const reactTable = document.getElementById("collections-table-react-js");
+const tableBody = vanillaTable.tBodies[0];
+
+function setVanillaTable() {
+    reactTable.style.display = "none";
+    vanillaTable.style.display = "table";
+}
+
+function setReactTable() {
+    vanillaTable.style.display = "none";
+    reactTable.style.display = "block";
+}
+
 const saveButton = (rowId) => `\
 <button type="button" title="Save" class="icon" onclick="saveRow(${rowId})" >
     <span class="material-symbols-outlined">
@@ -25,10 +39,9 @@ const deleteButton = (rowId) => `\
 </button>
 `;
 
-const table = document.getElementById("collections-table").tBodies[0];
 
 function addRow() {
-    const row = table.insertRow(-1);
+    const row = tableBody.insertRow(-1);
     const rowId = row.rowIndex;
 
     const titleCell = row.insertCell(0);
@@ -55,7 +68,7 @@ function addRow() {
 }
 
 function editRow(rowId) {
-    const row = table.rows[rowId - 1];
+    const row = tableBody.rows[rowId - 1];
     const titleCell = row.cells[0];
     const versionCell = row.cells[1];
     const actionsCell = row.cells[3];
@@ -77,7 +90,7 @@ function editRow(rowId) {
 }
 
 function saveRow(rowId) {
-    const row = table.rows[rowId - 1];
+    const row = tableBody.rows[rowId - 1];
     const titleCell = row.cells[0];
     const versionCell = row.cells[1];
     const actionsCell = row.cells[3];
@@ -91,10 +104,10 @@ function saveRow(rowId) {
 }
 
 function deleteRow(rowId) {
-    table.deleteRow(rowId - 1);
+    tableBody.deleteRow(rowId - 1);
 
-    for (let i = rowId - 1; i < table.rows.length; i++) {
-        const row = table.rows[i];
+    for (let i = rowId - 1; i < tableBody.rows.length; i++) {
+        const row = tableBody.rows[i];
         const actionsCell = row.cells[3];
         const rowId = i + 1;
 

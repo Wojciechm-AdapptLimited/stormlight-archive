@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:700|Poppins:400");
 :root {
-  --border-radius: 0.5rem;
+  --border-radius: 1rem;
   --color-text: #121621;
   --color-background: #e8eaf3;
   --color-primary: #96a7da;
@@ -174,6 +174,36 @@
 #table-container #table-title {
   text-align: center;
 }
+#table-container #table-change-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-block: 20px;
+}
+#table-container #table-change-container button {
+  border: 2px solid var(--color-accent);
+  border-radius: var(--border-radius);
+  padding: 10px 20px;
+  background-color: transparent;
+  color: var(--color-text);
+  font-size: 1em;
+}
+#table-container #table-change-container button:hover {
+  background-color: rgba(1, 1, 1, 0.05);
+}
+#table-container .collections-table {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+#table-container .collections-table .collections-table-header {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 80%;
+  margin-block: 20px;
+}
 #table-container table {
   table-layout: fixed;
   width: 80%;
@@ -187,8 +217,6 @@
 }
 #table-container table tbody tr td {
   border-bottom: 1px solid var(--color-secondary);
-}
-#table-container table tbody tr td:nth-child(3), #table-container table tbody tr td:nth-child(4) {
   text-align: center;
 }
 #table-container table tbody tr:hover {
@@ -200,7 +228,7 @@
 #table-container table tbody tr:last-child td {
   border-bottom: none;
 }
-#table-container #table-fab {
+#table-container .table-fab {
   position: fixed;
   bottom: 100px;
   right: 50px;
@@ -215,11 +243,11 @@
   padding: 20px;
   font-size: 1rem;
 }
-#table-container #table-fab:hover {
+#table-container .table-fab:hover {
   cursor: pointer;
   background-color: var(--color-accent);
 }
-#table-container #table-fab:focus-within {
+#table-container .table-fab:focus-within {
   border: 1px solid var(--color-accent);
 }
 
@@ -312,11 +340,28 @@ select {
   font-size: inherit;
   cursor: pointer;
   line-height: inherit;
+  max-width: 100%;
 }
 select option:hover {
   background-color: var(--color-accent) !important;
 }
 select:focus-visible {
+  outline: 0;
+  background-color: rgba(1, 1, 1, 0.05);
+}
+
+input {
+  border: none;
+  text-decoration: none;
+  background-color: transparent;
+  border-bottom: 1px solid var(--color-accent);
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  line-height: inherit;
+  max-width: 100%;
+}
+input:focus-visible {
   outline: 0;
   background-color: rgba(1, 1, 1, 0.05);
 }

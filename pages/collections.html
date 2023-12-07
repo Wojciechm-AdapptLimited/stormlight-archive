@@ -30,23 +30,30 @@
     </header>
     <section class="container" id="table-container">
         <h4 id="table-title">Stormlight Archive Book Collection</h4>
-        <table id="collections-table">
-            <thead>
+        <div id="table-change-container">
+            <button type="button" onclick="setVanillaTable()">Vanilla JS</button>
+            <button type="button" onclick="setReactTable()">React</button>
+        </div>
+        <div class="collections-table">
+            <table id="collections-table-vanilla-js">
+                <thead>
                 <tr>
                     <th>Title</th>
                     <th>Version</th>
                     <th>Finished</th>
                     <th>Actions</th>
                 </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-        <button id="table-fab" type="button" onclick="addRow()">
-            <span class="material-symbols-outlined">
-                add
-            </span>
-            <span>Add</span>
-        </button>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <button class="table-fab" type="button" onclick="addRow()">
+                <span class="material-symbols-outlined">
+                    add
+                </span>
+                <span>Add</span>
+            </button>
+        </div>
+        <div id="collections-table-react-js" style="width: 100%"></div>
     </section>
     <footer id="site-footer">
         <p>Designed by</p>
@@ -55,5 +62,6 @@
 
     <script src="../scripts/utils.js"></script>
     <script src="../scripts/table.js"></script>
+    <script src="../scripts/index.jsx" type="module"></script>
 </body>
 </html>
