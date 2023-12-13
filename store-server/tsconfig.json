@@ -1,0 +1,50 @@
+{
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules/", "dist/", "tests/"],
+
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": ".",
+
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    
+    "module": "NodeNext",
+    "moduleResolution": "node",
+    "target": "ES2023",
+
+    "outDir": "dist/",
+
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+
+    "allowImportingTsExtensions": true,
+    "allowSyntheticDefaultImports": true,
+    "noEmit": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "forceConsistentCasingInFileNames": true,
+    "alwaysStrict": true,
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitThis": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "strictFunctionTypes": true,
+
+    "plugins": [
+      {
+        "name": "@rollup/plugin-typescript"
+      }
+    ]
+  }
+}
