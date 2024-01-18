@@ -9,10 +9,12 @@
     "paths": {
       "@/*": ["./src/*"]
     },
+
+    "lib": ["ES2023", "ES2022.Object", "DOM"],
     
     "module": "NodeNext",
-    "moduleResolution": "node",
-    "target": "ES2023",
+    "moduleResolution": "NodeNext",
+    "target": "ESNext",
 
     "outDir": "dist/",
 
