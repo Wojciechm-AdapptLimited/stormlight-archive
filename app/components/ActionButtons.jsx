@@ -1,35 +1,5 @@
 import React from "react";
 
-const SaveButton = ({ saveCollection }) => {
-    return (
-        <button type={"button"} title={"Save"} className={"icon"} onClick={saveCollection}>
-            <span className="material-symbols-outlined">
-                save
-            </span>
-        </button>
-    );
-}
-
-const EditButton = ({ setEditMode }) => {
-    return (
-       <button type={"button"} title={"Edit"} className={"icon"} onClick={setEditMode}>
-            <span className="material-symbols-outlined">
-                edit
-            </span>
-       </button>
-    );
-}
-
-const DeleteButton = ({ deleteCollection }) => {
-    return (
-       <button type={"button"} title={"Delete"} className={"icon"} onClick={deleteCollection}>
-            <span className="material-symbols-outlined">
-                delete
-            </span>
-       </button>
-    );
-}
-
 
 const SortButton = ({colKey, sortKey, sortDirection, performSort }) => {
     const [arrow, setArrow] = React.useState("swap_vert");
@@ -53,15 +23,26 @@ const SortButton = ({colKey, sortKey, sortDirection, performSort }) => {
     );
 }
 
-const AddButton = ({ addCollection }) => {
+const FabButton = ({ onClick, icon, title }) => {
     return (
-        <button type={"button"} title={"Add"} className={"table-fab"} onClick={addCollection}>
+        <button type={"button"} title={title} className={"table-fab"} onClick={onClick}>
             <span className="material-symbols-outlined">
-                add
+                {icon}
             </span>
-            <span>Add</span>
+            <span>{title}</span>
         </button>
     );
 }
 
-export { SaveButton, EditButton, DeleteButton, SortButton, AddButton };
+const IconButton = ({onClick, icon, title}) => {
+    return (
+        <button type={"button"} title={title} className={"icon"} onClick={onClick}>
+            <span className="material-symbols-outlined">
+                {icon}
+            </span>
+        </button>
+    );
+
+}
+
+export { SortButton, FabButton, IconButton };

@@ -1,7 +1,11 @@
 import React from "react";
 
 import { SearchBar } from "./SearchBar";
-import { SaveButton, EditButton, DeleteButton, SortButton, AddButton } from "./ActionButtons.jsx";
+import {
+    SortButton,
+    FabButton,
+    IconButton
+} from "./ActionButtons.jsx";
 import { Select } from "./Select.jsx";
 import { Rating } from "./Rating.jsx";
 import {v4} from "uuid";
@@ -56,8 +60,11 @@ const CollectionRow = ({collection, collections, setCollections, startInEditMode
                 <Rating editable={editMode} rating={rating} setRating={setRating} />
             </td>
             <td>
-                {editMode ? <SaveButton saveCollection={saveCollection} /> : <EditButton setEditMode={() => setEditMode(true)} />}
-                <DeleteButton deleteCollection={deleteCollection} />
+                {editMode
+                    ? <IconButton onClick={saveCollection} title={"Save"} icon={"save"} showTitle={false} />
+                    : <IconButton onClick={() => setEditMode(true)} title={"Edit"} icon={"edit"} showTitle={false} />
+                }
+                <IconButton onClick={deleteCollection} title={"Delete"} icon={"delete"} showTitle={false} />
             </td>
         </tr>
     )
@@ -130,7 +137,7 @@ const CollectionsTable = ({ collections }) => {
                     })}
                 </tbody>
             </table>
-            <AddButton addCollection={addCollection} />
+            <FabButton onClick={addCollection} title={"Add"} icon={"add"} />
         </div>
     );
 }
